@@ -24,6 +24,7 @@
 	<modules>
 		<module>introduccion-project-reactor</module>
 		<module>pruebas-step-verifier</module>
+		<module>pruebas-servicios-step-verifier/pruebas-servicios-step-verifier</module>
 	</modules>
 
 	<build>
