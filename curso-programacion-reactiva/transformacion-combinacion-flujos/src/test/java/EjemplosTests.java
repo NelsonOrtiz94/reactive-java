@@ -64,4 +64,35 @@ public class EjemplosTests {
                 .expectNextCount(6)
                 .verifyComplete();
     }
+
+    @Test
+    public void testCombinarFlujosConDelayConOperadorConcat(){
+        Flux<String> flux1 = Flux.just("Lucho", "Mo", "Julian")
+                .delayElements(Duration.ofSeconds(1));
+        Flux<String> flux2 = Flux.just("Diaz", "Salah", "Alvarez")
+                .delayElements(Duration.ofSeconds(1));
+
+        Flux<String> fluxConcat = Flux.concat(flux1, flux2).log();
+
+        StepVerifier.create(fluxConcat)
+                .expectSubscription()
+                .expectNext("Lucho", "Mo", "Julian","Diaz", "Salah", "Alvarez")
+                .verifyComplete();
+    }
+
+    @Test
+    public void testCombinarFlujosConDemoraConOperadorZip(){
+        Flux<String> flux1 = Flux.just("Lucho", "Mo", "Julian")
+                .delayElements(Duration.ofSeconds(1));
+        Flux<String> flux2 = Flux.just("Diaz", "Salah", "Alvarez")
+                .delayElements(Duration.ofSeconds(1));
+
+        Flux<String> fluxZip = Flux.zip(flux1,flux2,(f1,f2) -> {
+            return f1.concat(" ").concat(f2);
+        }).log();
+
+        StepVerifier.create(fluxZip)
+                .expectNext("Lucho Diaz", "Mo Salah", "Julian Alvarez")
+                .verifyComplete();
+    }
 }
