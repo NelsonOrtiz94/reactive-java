@@ -27,6 +27,7 @@
 		<module>pruebas-servicios-step-verifier/pruebas-servicios-step-verifier</module>
 		<module>contrapresion-ejemplos</module>
 		<module>transformacion-combinacion-flujos</module>
+		<module>manejo.excepciones</module>
 	</modules>
 
 	<build>
