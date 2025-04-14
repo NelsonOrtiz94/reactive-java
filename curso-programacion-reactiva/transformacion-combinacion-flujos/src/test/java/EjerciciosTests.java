@@ -23,7 +23,7 @@ public class EjerciciosTests {
         Flux<String> flux1 = Flux.fromArray(new String[]{"a", "b"})
                 .delayElements(Duration.ofMillis(100));
         Flux<String> flux2 = Flux.fromArray(new String[]{"c", "d"})
-                .delayElements(Duration.ofMillis(100));
+                .delayElements(Duration.ofMillis(125));
 
         return flux1.mergeWith(flux2);
     }
