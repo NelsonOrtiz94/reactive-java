@@ -15,8 +15,10 @@ public class ControladorReactivo {
 
     @RequestMapping("/lista")
     public String listarProductos(Model model) {
-        IReactiveDataDriverContextVariable listaReactiva = new ReactiveDataDriverContextVariable(productoRepository.buscarTodos(),1);
-        model.addAttribute("listarProdcutos", listaReactiva);
+        // Variable reactiva que contiene la lista de productos
+        IReactiveDataDriverContextVariable listaReactiva =
+                new ReactiveDataDriverContextVariable(productoRepository.buscarTodos(),1);
+        model.addAttribute("listarProductos", listaReactiva);
         return "lista";
     }
 }

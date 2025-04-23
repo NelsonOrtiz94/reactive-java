@@ -11,14 +11,23 @@ import java.util.List;
 public class ProductoRepository {
 
     private static List<Producto> lista = new ArrayList<>();
+    private static List<Producto> lista2 = new ArrayList<>();
 
     static{
-        lista.add(new Producto(1, "ordenador", 100));
-        lista.add(new Producto(2, "Diademas", 200));
-        lista.add(new Producto(3, "Cascos", 300));
+        lista.add(new Producto(1,"ordenador",200));
+        lista.add(new Producto(2,"tablet",300));
+        lista.add(new Producto(3,"auricular",200));
+
+        lista2.add(new Producto(4,"movil",200));
+        lista2.add(new Producto(5,"teclado",30));
+        lista2.add(new Producto(6,"raton",20));
     }
 
-    public Flux<Producto> buscarTodos() {
+    public Flux<Producto> buscarTodos(){
         return Flux.fromIterable(lista).delayElements(Duration.ofSeconds(3));
+    }
+
+    public Flux<Producto> buscarOtros(){
+        return Flux.fromIterable(lista2).delayElements(Duration.ofSeconds(3));
     }
 }
