@@ -29,6 +29,7 @@
 		<module>transformacion-combinacion-flujos</module>
 		<module>manejo.excepciones</module>
 		<module>ejemplo-thymeleaf-reactivo/ejemplo-thymeleaf-reactivo</module>
+		<module>hot.cold.publishers</module>
 	</modules>
 
 	<build>
