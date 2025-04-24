@@ -11,13 +11,13 @@ import org.thymeleaf.spring5.context.webflux.ReactiveDataDriverContextVariable;
 public class ControladorReactivo {
 
     @Autowired
-    private ProductoRepository productoRepository;
+    private ProductoService productoService;
 
     @RequestMapping("/lista")
     public String listarProductos(Model model) {
         // Variable reactiva que contiene la lista de productos
         IReactiveDataDriverContextVariable listaReactiva =
-                new ReactiveDataDriverContextVariable(productoRepository.buscarTodos(),1);
+                new ReactiveDataDriverContextVariable(productoService.buscarTodos(),1);
         model.addAttribute("listarProductos", listaReactiva);
         return "lista";
     }
