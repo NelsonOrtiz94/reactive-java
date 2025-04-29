@@ -7,7 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.5</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 
 	<groupId>com.programacion.reactiva</groupId>
@@ -30,6 +30,7 @@
 		<module>manejo.excepciones</module>
 		<module>ejemplo-thymeleaf-reactivo/ejemplo-thymeleaf-reactivo</module>
 		<module>hot.cold.publishers</module>
+		<module>api-rest-reactiva-anotaciones/api-rest-reactiva-anotaciones</module>
 	</modules>
 
 	<build>
