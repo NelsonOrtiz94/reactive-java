@@ -31,6 +31,7 @@
 		<module>ejemplo-thymeleaf-reactivo/ejemplo-thymeleaf-reactivo</module>
 		<module>hot.cold.publishers</module>
 		<module>api-rest-reactiva-anotaciones/api-rest-reactiva-anotaciones</module>
+		<module>api.rest.reactiva-mongo/api.rest.reactiva-mongo</module>
 	</modules>
 
 	<build>
