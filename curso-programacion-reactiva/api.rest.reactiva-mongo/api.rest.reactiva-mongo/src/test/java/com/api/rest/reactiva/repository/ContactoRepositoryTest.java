@@ -8,6 +8,7 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.ReactiveMongoOperations;
+import reactor.test.StepVerifier;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -35,5 +36,10 @@ public class ContactoRepositoryTest {
         contacto3.setNombre("Test3");
         contacto3.setEmail("c3@gmail.com");
         contacto3.setTelefono("333222");
+
+        //Guardar contactos
+        StepVerifier.create(contactoRepository.insert(contacto1).log())
+                .expectNextCount(1)
+                .verifyComplete();
     }
 }
