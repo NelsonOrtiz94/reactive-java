@@ -21,6 +21,9 @@ public class Contacto {
         this.telefono = telefono;
     }
 
+    public Contacto(String id, String webTestClient, String mail, String number) {
+    }
+
     public String getId() {
         return id;
     }
