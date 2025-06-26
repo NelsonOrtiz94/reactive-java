@@ -42,7 +42,7 @@ public class ContactoController {
                 .defaultIfEmpty(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PutMapping("/contactos/{id")
+    @PutMapping("/contactos/{id}")
     public Mono<ResponseEntity<Contacto>> actualizarContacto(@RequestBody Contacto contacto, @PathVariable String id) {
         return contactoRepository.findById(id)
                 .flatMap(contactoExistente -> {
